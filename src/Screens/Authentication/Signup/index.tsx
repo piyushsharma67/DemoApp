@@ -60,11 +60,11 @@ const SignUpScreen=({route,navigation}:SignUpScreenProps)=>{
     return (
         <View style={{flex:1,backgroundColor:'white'}}>
             <Loader loading={fetching}/>
-            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'white'}}>
                 <View style={{flex:0.7,marginVertical:20}}>
                     <Text style={{fontSize:theme.FONT_LARGE,color:theme.PRIMARY_COLOR}}>Shyft Bank</Text>
                 </View>
-                <View style={{flex:0.4}}> 
+                <View style={{flex:0.4,backgroundColor:'white'}}> 
                     <Text style={{fontSize:theme.FONT_MEDIUM,color:'black',textDecorationLine:'underline'}}>SignUp</Text>
                 </View>
             </View>
@@ -94,7 +94,7 @@ const SignUpScreen=({route,navigation}:SignUpScreenProps)=>{
                     placeholder="confirm password"
                     secureTextEntry={true}
                 />
-                <View style={{width:'40%',height:'10%',alignSelf:'center'}}>
+                <View style={{width:'50%',height:'10%',alignSelf:'center'}}>
                     <ButtonCustom text={'SignUp'} disabled={Enabled} onPress={()=>{
                         const re = /\S+@\S+\.\S+/;
                         if(authDetails.password==="" || authDetails.password==="" || authDetails.confirm_password===""){

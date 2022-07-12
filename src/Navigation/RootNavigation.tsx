@@ -15,7 +15,7 @@ const RootNavigation=()=>{
     return (
         <Stack.Navigator screenOptions={{headerShown:false}}>
             {!verified && <Stack.Screen name='Authentication' component={AuthenticationStack}/>}
-            <Stack.Screen name='Authenticated' component={AuthenticatedBottomtabRootNavigator} />
+           {verified && <Stack.Screen name='Authenticated' component={AuthenticatedBottomtabRootNavigator} />}
         </Stack.Navigator>
     )
 }

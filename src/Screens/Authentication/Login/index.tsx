@@ -50,7 +50,7 @@ const LoginScreen=()=>{
             </View>
 
             <View style={{flex:2,width:'70%',alignSelf:'center'}}>
-            <InputBoxWithLabel 
+                <InputBoxWithLabel 
                     labelName='Email' 
                     tag={keys.EMAIL} 
                     onChangevalue={setFeild} 

@@ -17,14 +17,21 @@ const initialState = {
   name:''
 } as Auth;
 
+interface responseType{
+  body:{
+      email:string,
+      token:string,
+      name:string
+  },
+  status:number
+}
 
 export const getAuthDetails = createAsyncThunk(
   'fetchAuth/getAuthDetails',
   async () => {
-    console.log("i was called")
+    
     return signupUser()
-      .then((res: any) => {
-        console.log("res",res)
+      .then((res: responseType) => {
         return res})
       .catch(err=>{
 

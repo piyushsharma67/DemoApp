@@ -95,14 +95,15 @@ const SignUpScreen=({route,navigation}:SignUpScreenProps)=>{
                     secureTextEntry={true}
                 />
                 <View style={{width:'50%',height:'10%',alignSelf:'center'}}>
-                    <ButtonCustom text={'SignUp'} disabled={Enabled} onPress={()=>{
+                    <ButtonCustom text={'SignUp'} disabled={!Enabled} onPress={()=>{
                         const re = /\S+@\S+\.\S+/;
-                        if(authDetails.password==="" || authDetails.password==="" || authDetails.confirm_password===""){
+                        if(authDetails.email==="" || authDetails.password==="" || authDetails.confirm_password===""){
                             Alert.alert("Notification","input feilds cannot be left empty")
-                        }else if(authDetails.password!==authDetails.confirm_password){
-                            Alert.alert("Notification","passwords do not match")
                         }else if(!re.test(authDetails.email)){
                             Alert.alert("Notification","please enter a valid email")
+                        }
+                        else if(authDetails.password!==authDetails.confirm_password){
+                            Alert.alert("Notification","passwords do not match")
                         }else {
                             dispatch(getAuthDetails())
                         }

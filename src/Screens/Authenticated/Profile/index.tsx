@@ -12,6 +12,9 @@ function ProfileScreen(){
     return (
         <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
             <Text style={{color:theme.PRIMARY_COLOR,fontSize:theme.FONT_MEDIUM}}>Hi {name}</Text>
+            <View style={{marginTop:20,width:'50%',height:50}}>
+                <Button text={'Logout'} onPress={()=>dispatch({type:'logout'})} disabled={false}/>
+            </View>
         </View>
     )
 }

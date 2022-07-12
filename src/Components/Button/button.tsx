@@ -4,7 +4,6 @@ import { theme } from '../../utils/commonTheme'
 
 interface buttonProps extends TouchableOpacityProps{
     text:string,
-    disabled?:boolean,
     onPress:()=>void,
 
 }
@@ -12,9 +11,9 @@ interface buttonProps extends TouchableOpacityProps{
 function ButtonCustom(props:buttonProps){
     return (
         <TouchableOpacity 
-            style={[style.container,{backgroundColor:props.disabled===false ? "grey" : theme.PRIMARY_COLOR}]} 
+            style={[style.container,{backgroundColor:!props.disabled===true || props.disabled===undefined ? theme.PRIMARY_COLOR : "grey" }]} 
             onPress={props.onPress} 
-            disabled={!props.disabled}
+            disabled={props.disabled}
         >
             <View style={style.textContainer}>
                 <Text style={style.text}>{props.text}</Text>

@@ -3,9 +3,10 @@ import {View, Text, StyleSheet, TextInput, TextInputProps} from 'react-native';
 import { theme } from '../../utils/commonTheme';
 
 interface Props extends TextInputProps {
-  labelName: string;
+  labelName?: string;
   tag:string;
-  onChangevalue:(val:string,key:string)=>void
+  onChangevalue:(val:string,key:string)=>void,
+  isLabel:boolean
 }
 
 const InputBoxWithLabel = (props: Props) => {
@@ -13,10 +14,10 @@ const InputBoxWithLabel = (props: Props) => {
   return (
     (
       <View style={[styles.inputBoxContainer, props.style]}>
-        <View style={styles.labelContainer}>
+        {props.isLabel && <View style={styles.labelContainer}>
           <Text style={{color: theme.PRIMARY_COLOR}}>{props.labelName}</Text>
-        </View>
-        <View style={styles.inputContainer}>
+        </View>}
+        <View style={[styles.inputContainer,{borderRadius:props.isLabel ? 0 : 8}]}>
           <TextInput
             placeholder={props.placeholder}
             style={{color: '#000'}}
@@ -31,7 +32,7 @@ const InputBoxWithLabel = (props: Props) => {
   )
 }
 const styles = StyleSheet.create({
-  inputBoxContainer: {marginVertical: 15, width: '100%'},
+  inputBoxContainer: {marginVertical: 5, width: '100%'},
 
   labelContainer: {
     backgroundColor: 'white', // Same color as background

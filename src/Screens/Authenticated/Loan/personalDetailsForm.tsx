@@ -86,7 +86,8 @@ const style = StyleSheet.create({
     heading: { 
         fontSize: theme.FONT_MEDIUM, 
         fontWeight: 'bold', 
-        fontColor: 'black' 
+        color: 'black' ,
+        textDecorationLine:'underline'
     },
     infoContainer: {
         flex: 1,

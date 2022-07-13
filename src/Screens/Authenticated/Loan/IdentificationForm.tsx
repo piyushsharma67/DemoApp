@@ -23,7 +23,7 @@ function IdentificationForm(props:props){
     return (
         <View style={{ flex: 1, width: '95%', alignSelf: 'center' ,marginVertical:20}}>
         <View style={style.headingContainer}>
-            <Text style={style.heading}>Address</Text>
+            <Text style={style.heading}>Identification</Text>
         </View>
         <View style={style.infoContainer}>
             <View style={style.rowContainer}>
@@ -103,7 +103,8 @@ const style = StyleSheet.create({
     heading: { 
         fontSize: theme.FONT_MEDIUM, 
         fontWeight: 'bold', 
-        fontColor: 'black' 
+        color: 'black' ,
+        textDecorationLine:'underline'
     },
     infoContainer: {
         flex: 1,

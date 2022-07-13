@@ -137,7 +137,7 @@ function LoanScreen(){
 
 const style=StyleSheet.create({
     headingContainer:{
-        flex:0.2,justifyContent:'center',alignItems:'center'
+        flex:0.2,justifyContent:'center',alignItems:'center',marginTop:25
     },
     heading:{fontSize:theme.FONT_MEDIUM,color:theme.PRIMARY_COLOR,textDecorationLine:'underline'}
 })
